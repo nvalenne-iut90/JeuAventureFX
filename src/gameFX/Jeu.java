@@ -1,7 +1,8 @@
 package gameFX;
 
-import gameFX.events.ControlButton;
-import gameFX.personnage.player.Joueur;
+
+import gameFX.model.personnage.player.Joueur;
+import gameFX.view.stage.Hub;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -11,28 +12,32 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.net.URL;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Jeu extends Application {
     public static Scanner scan = new Scanner(System.in);
     public static Joueur player;
-    public static Scene createPlayer;
+    public static Scene firstScene;
+    public static final int X_WINDOW = 600;
+    public static final int Y_WINDOW = 800;
 
 
 
-    public TextField playerName;
-    public Button play;
-    public RadioButton male;
+    TextField playerName;
+    Button play;
+    RadioButton male;
     RadioButton female;
     ToggleGroup tgSex;
-    // Image gameLogo = new Image(new FileInputStream("~/Documents/JeuAventureFX/src/gameFX/assets/logoJeu.png"));
     VBox vbPlayer;
     HBox hbSex;
+    HBox hbLogo;
 
 
     public static void jeuPerdant() throws InterruptedException {
@@ -40,7 +45,13 @@ public class Jeu extends Application {
         TimeUnit.SECONDS.sleep(3);
         System.exit(0);
     }
-    private void initElements(){
+
+    private Scene createScene(){
+        final URL imageURL = getClass().getResource("model/assets/logoJeu.png");
+        final ImageView imageView = new ImageView(new Image(imageURL.toExternalForm()));
+        imageView.setScaleX(0.7);
+        imageView.setScaleY(0.8);
+
         play = new Button("PLAY");
         play.setStyle("-fx-background-color: #00adff;");
         male = new RadioButton("masculin");
@@ -51,28 +62,35 @@ public class Jeu extends Application {
         male.setSelected(true);
         playerName = new TextField();
         playerName.setPromptText("Enter your name");
-        playerName.setMaxWidth(200);
+        playerName.setMaxWidth(250);
+        playerName.setStyle("-fx-background-color: rgba(250, 184, 114, 0.5);");
 
         hbSex = new HBox();
+        hbLogo = new HBox();
         vbPlayer = new VBox();
-    }
 
-    private void displayElements(){
+        hbLogo.getChildren().add(imageView);
+        hbLogo.setAlignment(Pos.CENTER);
         hbSex.getChildren().addAll(male, female);
         hbSex.setAlignment(Pos.CENTER);
-        vbPlayer.getChildren().addAll(playerName, hbSex, play);
+        vbPlayer.getChildren().addAll(hbLogo, playerName, hbSex, play);
         vbPlayer.setAlignment(Pos.CENTER);
         VBox.setMargin(playerName, new Insets(15));
         VBox.setMargin(hbSex, new Insets(15));
 
-        createPlayer = new Scene(vbPlayer,600,500);
-        createPlayer.getStylesheets().add("styles/stylePlayer.css");
+        firstScene = new Scene(vbPlayer,X_WINDOW,Y_WINDOW);
+        // firstScene.getStylesheets().add("styles/stylePlayer.css");
+        return firstScene;
 
     }
 
     private void addListeners(){
-        ControlButton cb = new ControlButton(this);
-        play.setOnAction(cb);
+        play.setOnAction(actionEvent -> {
+            String sexe = ((RadioButton)male.getToggleGroup().getSelectedToggle()).getText();
+            player = new Joueur(playerName.getText(), sexe);// /!\ Création du joueur /!\
+
+            Hub.lancer(player);
+        });
     }
 
 
@@ -82,10 +100,10 @@ public class Jeu extends Application {
 
     @Override
     public void start(Stage stage) {
-        initElements();
-        displayElements();
+        stage.setScene(createScene());
         addListeners();
-        stage.setScene(createPlayer);
+        stage.setTitle("Jeu Aventure");
+        stage.setResizable(false);
         stage.show();
     }
 }

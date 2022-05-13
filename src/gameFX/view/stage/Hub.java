@@ -5,8 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 
-import static gameFX.Jeu.X_WINDOW;
-import static gameFX.Jeu.Y_WINDOW;
+import static gameFX.Jeu.*;
 
 
 public class Hub {
@@ -16,7 +15,7 @@ public class Hub {
         Button btn = new Button("Button");
         HBox hbox = new HBox();
         hbox.getChildren().add(btn);
-        return new Scene(hbox, X_WINDOW, Y_WINDOW);
+        return new Scene(hbox, X_START_MENU, Y_START_MENU);
     }
 
     public static void lancer(Joueur joueur) {

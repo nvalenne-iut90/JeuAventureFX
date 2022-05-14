@@ -12,19 +12,30 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HubController {
-    public Label welcome;
+    @FXML
+    private Label welcome;
+
     private Parent root;
     private Stage stage;
     private Scene scene;
 
+    public void setLabel(String pseudo, String sexe){
+        if (sexe.equals("Masculin")){
+            welcome.setText("Bienvenue Guerrier " + pseudo);
+        } else {
+            welcome.setText("Bienvenue Guerrière " + pseudo);
+        }
+    }
+
     @FXML
     public void goToStages(MouseEvent e) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/gameFX/view/stage/stage_menu.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/gameFX/view/stage/stageMenu.fxml"));
         stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
     public void goToShop(MouseEvent e) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/gameFX/view/stage/shop.fxml"));
         stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
@@ -32,6 +43,7 @@ public class HubController {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
     public void goToInventory(MouseEvent e) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/gameFX/view/stage/inventory.fxml"));
         stage = (Stage) ((Node)e.getSource()).getScene().getWindow();

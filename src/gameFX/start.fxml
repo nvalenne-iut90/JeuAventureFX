@@ -10,39 +10,51 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameFX.control.events.StartController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="720.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameFX.control.events.StartController">
    <children>
-      <VBox alignment="CENTER" layoutX="40.0" layoutY="21.0" prefHeight="222.0" prefWidth="528.0">
+      <VBox alignment="CENTER" prefHeight="1080.0" prefWidth="720.0">
          <children>
-            <ImageView fitHeight="202.0" fitWidth="318.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="298.0" fitWidth="482.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@model/assets/logoJeu.png" />
                </image>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
             </ImageView>
-            <TextField fx:id="pseudo" maxHeight="-Infinity" maxWidth="300" prefHeight="30.0" prefWidth="250.0" promptText="Enter your nickname" />
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <TextField fx:id="pseudo" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="300.0" promptText="Enter your nickname" style="-fx-alignment: center;-fx-border-radius: 20px;">
+               <font>
+                  <Font name="Ubuntu Bold" size="23.0" />
+               </font></TextField>
+            <HBox alignment="CENTER" prefHeight="107.0" prefWidth="1326.0">
                <children>
-                  <RadioButton mnemonicParsing="false" selected="true" text="Masculin">
+                  <RadioButton mnemonicParsing="false" prefHeight="70.0" prefWidth="125.0" selected="true" text="Masculin">
                      <toggleGroup>
                         <ToggleGroup fx:id="tgSex" />
                      </toggleGroup>
+                     <font>
+                        <Font size="19.0" />
+                     </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Féminin">
+                  <RadioButton mnemonicParsing="false" prefHeight="65.0" prefWidth="146.0" text="Féminin">
                      <padding>
                         <Insets left="10.0" />
                      </padding>
                      <toggleGroup>
                         <fx:reference source="tgSex" />
                      </toggleGroup>
+                     <font>
+                        <Font size="19.0" />
+                     </font>
                   </RadioButton>
                </children>
                <padding>
                   <Insets top="20.0" />
                </padding>
             </HBox>
-            <Button fx:id="play" mnemonicParsing="false" text="PLAY" onMouseClicked="#createPlayer">
+            <Button fx:id="play" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#createPlayer" prefHeight="50.0" prefWidth="200.0" text="PLAY">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>

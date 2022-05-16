@@ -27,7 +27,7 @@
             <Font size="15" name="Ubuntu bold"/>
          </font>
       </Label>
-      <HBox alignment="CENTER" prefHeight="107.0" prefWidth="1326.0">
+      <HBox alignment="CENTER" prefHeight="107.0" prefWidth="720.0">
          <padding>
             <Insets top="20.0"/>
          </padding>

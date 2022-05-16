@@ -9,55 +9,60 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="1080.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameFX.control.events.HubController">
-   <children>
-      <VBox alignment="CENTER" prefHeight="1080.0" prefWidth="720.0" style="-fx-background-color: white;">
-         <children>
-            <ImageView fitHeight="267.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../model/assets/logoJeu.png" />
-               </image>
-               <VBox.margin>
-                  <Insets bottom="20.0" />
-               </VBox.margin>
-            </ImageView>
-            <Label text="Label" textAlignment="CENTER" fx:id="welcome">
-               <VBox.margin>
-                  <Insets bottom="20.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Label>
-            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToStages" prefHeight="60.0" prefWidth="400.0" text="PLAY" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets bottom="15.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToShop" prefHeight="60.0" prefWidth="400.0" text="SHOP" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets bottom="15.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToInventory" prefHeight="60.0" prefWidth="400.0" text="INVENTORY" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets bottom="15.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#quit" prefHeight="60.0" prefWidth="400.0" text="QUIT" textAlignment="CENTER">
-               <font>
-                  <Font size="30.0" />
-               </font></Button>
-         </children>
-      </VBox>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="1080.0" prefWidth="720.0"
+            xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="gameFX.control.events.HubController">
+   <VBox alignment="CENTER" prefHeight="1080.0" prefWidth="720.0" style="-fx-background-color: white;">
+      <ImageView fitHeight="267.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets bottom="20.0"/>
+         </VBox.margin>
+         <Image url="@../../model/assets/logoJeu.png"/>
+      </ImageView>
+      <Label fx:id="welcome" text="Label" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets bottom="20.0"/>
+         </VBox.margin>
+         <font>
+            <Font size="25.0"/>
+         </font>
+      </Label>
+      <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
+              minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToStages"
+              prefHeight="60.0" prefWidth="400.0" text="PLAY" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets bottom="15.0"/>
+         </VBox.margin>
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
+              minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToShop"
+              prefHeight="60.0" prefWidth="400.0" text="SHOP" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets bottom="15.0"/>
+         </VBox.margin>
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
+              minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToInventory"
+              prefHeight="60.0" prefWidth="400.0" text="INVENTORY" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets bottom="15.0"/>
+         </VBox.margin>
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
+              minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#quit"
+              prefHeight="60.0" prefWidth="400.0" text="QUIT" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Button>
+   </VBox>
 </AnchorPane>

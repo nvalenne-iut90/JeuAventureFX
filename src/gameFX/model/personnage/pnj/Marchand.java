@@ -6,4 +6,8 @@ public class Marchand extends PNJ {
         super(n, 1000);
         this.typeMarchand = type;
     }
+
+    public String getType() {
+        return typeMarchand;
+    }
 }

@@ -1,65 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="720.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameFX.control.events.StartController">
-   <children>
-      <VBox alignment="CENTER" prefHeight="1080.0" prefWidth="720.0">
-         <children>
-            <ImageView fitHeight="298.0" fitWidth="482.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@model/assets/logoJeu.png" />
-               </image>
-               <VBox.margin>
-                  <Insets bottom="20.0" />
-               </VBox.margin>
-            </ImageView>
-            <TextField fx:id="pseudo" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="300.0" promptText="Enter your nickname" style="-fx-alignment: center;-fx-border-radius: 20px;">
-               <font>
-                  <Font name="Ubuntu Bold" size="23.0" />
-               </font></TextField>
-            <HBox alignment="CENTER" prefHeight="107.0" prefWidth="1326.0">
-               <children>
-                  <RadioButton mnemonicParsing="false" prefHeight="70.0" prefWidth="125.0" selected="true" text="Masculin">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="tgSex" />
-                     </toggleGroup>
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" prefHeight="65.0" prefWidth="146.0" text="Féminin">
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                     <toggleGroup>
-                        <fx:reference source="tgSex" />
-                     </toggleGroup>
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </RadioButton>
-               </children>
-               <padding>
-                  <Insets top="20.0" />
-               </padding>
-            </HBox>
-            <Button fx:id="play" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#createPlayer" prefHeight="50.0" prefWidth="200.0" text="PLAY">
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </Button>
-         </children>
-      </VBox>
-   </children>
+<AnchorPane prefHeight="1080.0" prefWidth="720.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="gameFX.control.events.StartController">
+   <VBox alignment="CENTER" prefHeight="1080.0" prefWidth="720.0">
+      <ImageView fitHeight="298.0" fitWidth="482.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets bottom="20.0"/>
+         </VBox.margin>
+         <Image url="@model/assets/logoJeu.png"/>
+      </ImageView>
+      <TextField fx:id="pseudo" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0"
+                 prefWidth="300.0" promptText="Enter your nickname"
+                 style="-fx-alignment: center;-fx-border-radius: 20px;">
+         <font>
+            <Font name="Ubuntu Bold" size="23.0"/>
+         </font>
+      </TextField>
+      <Label text="" fx:id="error">
+         <font>
+            <Font size="15" name="Ubuntu bold"/>
+         </font>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="107.0" prefWidth="1326.0">
+         <padding>
+            <Insets top="20.0"/>
+         </padding>
+         <RadioButton mnemonicParsing="false" prefHeight="70.0" prefWidth="125.0" selected="true" text="Masculin">
+            <toggleGroup>
+               <ToggleGroup fx:id="tgSex"/>
+            </toggleGroup>
+            <font>
+               <Font size="19.0"/>
+            </font>
+         </RadioButton>
+         <RadioButton mnemonicParsing="false" prefHeight="65.0" prefWidth="146.0" text="Féminin">
+            <padding>
+               <Insets left="10.0"/>
+            </padding>
+            <toggleGroup>
+               <fx:reference source="tgSex"/>
+            </toggleGroup>
+            <font>
+               <Font size="19.0"/>
+            </font>
+         </RadioButton>
+      </HBox>
+      <Button fx:id="play" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+              onAction="#createPlayer" prefHeight="50.0" prefWidth="200.0" text="PLAY">
+         <VBox.margin>
+            <Insets top="20.0"/>
+         </VBox.margin>
+      </Button>
+   </VBox>
 </AnchorPane>

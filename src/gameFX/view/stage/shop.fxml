@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="gameFX.view.stage.Shop"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<VBox prefHeight="1080.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameFX.control.events.ShopController">
+    <TabPane prefHeight="100.0" prefWidth="360.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="360.0" tabMaxWidth="200.0" tabMinWidth="335.0">
+        <Tab closable="false" text="ACHETER">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="300.0" />
+        </Tab>
+        <Tab closable="false" text="VENDRE">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </Tab>
+    </TabPane>
+    <SplitPane dividerPositions="0.4" orientation="VERTICAL" prefHeight="1080.0" prefWidth="720.0">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+               <ImageView fitHeight="258.0" fitWidth="257.0" pickOnBounds="true" preserveRatio="true">
+                   <Image url="@../../model/assets/seller.png" />
+               </ImageView>
+             <Label fx:id="namePNJ" text="">
+                 <font>
+                     <Font size="20"/>
+                 </font>
+             </Label>
+             <Label fx:id="welcome" layoutX="32.0" layoutY="20.0" prefHeight="86.0" prefWidth="668.0" text="" textAlignment="CENTER">
+                 <font>
+                     <Font size="24.0" />
+                 </font>
+             </Label>
+         </children>
+      </VBox>
+        <VBox minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" fx:id="articles">
+        </VBox>
+    </SplitPane>
+</VBox>

@@ -21,7 +21,7 @@ public class Jeu extends Application {
     public static final int Y_START_MENU = 1080;
 
     public static void jeuPerdant() {
-        System.out.println("\nVous êtes mort !");
+        System.out.println("Vous êtes mort !");
         System.exit(0);
     }
 

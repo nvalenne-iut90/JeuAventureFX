@@ -10,9 +10,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Joueur {
-    public static final Scanner scan = new Scanner(System.in);
-    private static Joueur joueur;
-    public static int nbrOfMonstersKilled = 0;
+    public static int nbrOfMonstersKilled = 1;
 
     private String sexe;
     private String nomJoueur;
@@ -25,15 +23,6 @@ public class Joueur {
     private Weapon weapon;
     private Weapon poings = new Weapon("poing", 0, "corps à corps", 20, 0, 1, false);
 
-    public Joueur(String nomJoueur, String sexe, int level, Weapon weapon, ClasseJoueur classe, int pv, int portefeuille){
-        this.nomJoueur = nomJoueur;
-        this.sexe = sexe;
-        this.Explevel = level;
-        this.weapon = weapon;
-        this.classePerso = classe;
-        this.pv = pv;
-        this.portefeuille = portefeuille;
-    }
     public Joueur(String nomJoueur, String sexe){
         this.nomJoueur = nomJoueur;
         this.sexe = sexe;
@@ -74,7 +63,10 @@ public class Joueur {
     public void levelUp() throws InterruptedException {
         System.out.println("\n==========\n Vous avez gagné un niveau ! " + Explevel + " --> " + (Explevel + 1) + "\n==========");
         setExplevel(Explevel + 1);
-        TimeUnit.SECONDS.sleep(2);
+    }
+
+    public boolean canLevelUp() {
+        return (nbrOfMonstersKilled % (10*Explevel) == 0);
     }
 
     public String toString() {

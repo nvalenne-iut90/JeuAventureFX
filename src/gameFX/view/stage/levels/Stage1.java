@@ -47,7 +47,7 @@ public class Stage1 {
             System.out.println("Le gobelin "+ goblin.getNom() +" est mort !");
             j.gainMoney(5);
             montant+=5;
-            if (nbrOfMonstersKilled % (10*j.getExplevel()) == 0)
+            if (j.canLevelUp())
                 j.levelUp();
 
         }

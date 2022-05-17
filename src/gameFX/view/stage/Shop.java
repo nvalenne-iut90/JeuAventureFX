@@ -26,15 +26,6 @@ public class Shop {
 
     private void buyToShopper(Joueur j) {
         for (int i = 0; i < articlesVente.length ; i++){
-            System.out.println("(" + (i+1) + ") " + articlesVente[i].getNameItem() + " : " + articlesVente[i].getPrice() + " pièces d'or");
-        }
-        System.out.println("Or : " + j.getPortefeuille());
-        if(!scan.hasNextInt()){
-            System.exit(0);
-        }
-        resultInt = scan.nextInt();
-
-        for (int i = 0; i < articlesVente.length ; i++){
             if ((resultInt-1) == i){
                 if (j.getPortefeuille() >= articlesVente[i].getPrice()){
                     j.addItemInInventory(articlesVente[i]);

@@ -1,6 +1,7 @@
 package gameFX.control.events;
 
 import gameFX.Jeu;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -8,7 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.ProgressBar;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,7 +18,9 @@ import java.util.ResourceBundle;
 
 public class HubController implements Initializable {
     @FXML
-    private Label welcome;
+    private Label welcome, levelInf, levelSup;
+    @FXML
+    ProgressBar lvlBar;
 
     private Parent root;
     private Stage stage;
@@ -25,19 +28,18 @@ public class HubController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        setLabel();
-    }
-
-    public void setLabel() {
         if ((Jeu.player.getSexe()).equals("Masculin")) {
             welcome.setText("Bienvenue Guerrier " + Jeu.player.getNomJoueur());
         } else if ((Jeu.player.getSexe()).equals("Féminin")) {
             welcome.setText("Bienvenue Guerrière " + Jeu.player.getNomJoueur());
         }
+        levelInf.setText("" + Jeu.player.getExplevel());
+        levelSup.setText("" + (Jeu.player.getExplevel()+1));
+        // lvlBar.setProgress();
     }
 
     @FXML
-    public void goToStages(MouseEvent e) throws IOException {
+    public void goToStages(ActionEvent e) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/gameFX/view/stage/stageMenu.fxml"));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -46,7 +48,7 @@ public class HubController implements Initializable {
     }
 
     @FXML
-    public void goToShop(MouseEvent e) throws IOException {
+    public void goToShop(ActionEvent e) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/gameFX/view/stage/shop.fxml"));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -55,7 +57,7 @@ public class HubController implements Initializable {
     }
 
     @FXML
-    public void goToInventory(MouseEvent e) throws IOException {
+    public void goToInventory(ActionEvent e) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/gameFX/view/stage/personnage/inventory.fxml"));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -63,7 +65,7 @@ public class HubController implements Initializable {
         stage.show();
     }
 
-    public void quit(MouseEvent e) {
+    public void quit(ActionEvent e) {
         System.out.println("Au revoir....");
         System.exit(0);
     }

@@ -5,6 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.geometry.Insets?>
 <VBox prefHeight="1080.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameFX.control.events.ShopController">
     <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="1080.0" prefWidth="720.0">
         <VBox fx:id="shopPlace" alignment="TOP_CENTER" prefWidth="720.0">
@@ -23,6 +24,13 @@
             </Label>
         </VBox>
         <VBox minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" fx:id="articles">
+            <Button onAction="#goToHub" text="Quitter la boutique" style="-fx-background-color: red;-fx-text-fill: white;">
+                <VBox.margin>
+                    <Insets bottom="20" top="10"/>
+                </VBox.margin>
+                <font>
+                    <Font size="15"/></font>
+            </Button>
         </VBox>
     </SplitPane>
 </VBox>

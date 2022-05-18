@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Joueur {
-    public static int nbrOfMonstersKilled = 1;
+    public static int nbrOfMonstersKilled = 0;
 
     private String sexe;
     private String nomJoueur;

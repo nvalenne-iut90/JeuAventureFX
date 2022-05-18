@@ -1,24 +1,21 @@
 package gameFX.control.events;
 
 import gameFX.Jeu;
+import gameFX.view.stage.personnage.LevelBar;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import static gameFX.model.personnage.player.Joueur.nbrOfMonstersKilled;
 
 public class HubController implements Initializable {
     @FXML
@@ -38,11 +35,8 @@ public class HubController implements Initializable {
             welcome.setText("Bienvenue Guerrière " + Jeu.player.getNomJoueur());
         }
 
-
-        levelInf.setText("" + Jeu.player.getExplevel());
-        levelSup.setText("" + (Jeu.player.getExplevel()+1));
-        HBox.setMargin(lvlBar, new Insets(10));
-        lvlBar.setProgress(nbrOfMonstersKilled * 1.0 / (10*Jeu.player.getExplevel()));
+        LevelBar progressBar = new LevelBar(levelInf, lvlBar, levelSup);
+        progressBar.initializeProgressBar();
     }
 
     @FXML

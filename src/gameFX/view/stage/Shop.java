@@ -1,9 +1,7 @@
 package gameFX.view.stage;
 
-import gameFX.Jeu;
 import gameFX.model.item.*;
 import gameFX.model.personnage.player.Joueur;
-import gameFX.model.personnage.pnj.PNJ;
 
 import java.util.Scanner;
 

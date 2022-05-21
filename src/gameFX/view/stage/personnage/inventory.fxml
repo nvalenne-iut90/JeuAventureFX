@@ -9,53 +9,60 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameFX.control.events.InventoryController">
-   <children>
-      <SplitPane dividerPositions="0.35" orientation="VERTICAL" prefHeight="1080.0" prefWidth="720.0">
-        <items>
-            <SplitPane dividerPositions="0.4" prefHeight="200.0" prefWidth="200.0">
-               <items>
-                  <VBox alignment="CENTER" prefHeight="355.0" prefWidth="671.0">
-                     <children>
-                        <Label fx:id="playerName">
-                           <font>
-                              <Font size="22.0" />
-                           </font>
-                        </Label>
-                         <HBox alignment="CENTER">
-                             <Label fx:id="levelInf">
-                                 <font>
-                                 <Font size="20" />
-                              </font>
-                             </Label>
-                             <ProgressBar fx:id="lvlBar" prefHeight="20" prefWidth="200.0">
-                       </ProgressBar>
-                             <Label fx:id="levelSup">
-                                 <font>
-                                 <Font size="20" />
-                              </font>
-                             </Label>
-                         </HBox>
-                     </children>
-                  </VBox>
-                  <VBox fx:id="equipment" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <HBox fx:id="hb1" alignment="CENTER" prefHeight="150.0" prefWidth="200.0">
-                           <VBox.margin>
-                              <Insets bottom="20.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox fx:id="hb2" alignment="CENTER" prefHeight="150.0" prefWidth="200.0" />
-                     </children></VBox>
-               </items>
-            </SplitPane>
-            <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
-              <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
-              </items>
-            </SplitPane>
-        </items>
-      </SplitPane>
-   </children>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane prefHeight="1080.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameFX.control.events.InventoryController" style="-fx-background-color: white">
+    <SplitPane dividerPositions="0.35" orientation="VERTICAL" prefHeight="1080.0" prefWidth="720.0">
+        <SplitPane dividerPositions="0.4" prefHeight="200.0" prefWidth="200.0">
+            <VBox alignment="CENTER" prefHeight="355.0" prefWidth="671.0">
+                <Label fx:id="playerName">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <HBox alignment="CENTER">
+                    <Label fx:id="levelInf">
+                        <font>
+                            <Font size="20"/>
+                        </font>
+                    </Label>
+                    <ProgressBar fx:id="lvlBar" prefHeight="20" prefWidth="200.0">
+                    </ProgressBar>
+                    <Label fx:id="levelSup">
+                        <font>
+                            <Font size="20"/>
+                        </font>
+                    </Label>
+                </HBox>
+            </VBox>
+            <VBox fx:id="equipment" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                <HBox fx:id="hb1" alignment="CENTER" prefHeight="150.0" prefWidth="200.0">
+                    <VBox.margin>
+                        <Insets bottom="20.0"/>
+                    </VBox.margin>
+                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" fx:id="haut">
+                        <HBox.margin>
+                            <Insets right="15.0"/>
+                        </HBox.margin>
+                    </VBox>
+                    <VBox prefHeight="200.0" prefWidth="200.0" fx:id="plastron">
+                    </VBox>
+                </HBox>
+                <HBox fx:id="hb2" alignment="CENTER" prefHeight="150.0" prefWidth="200.0">
+                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" fx:id="pantalon">
+                        <HBox.margin>
+                            <Insets right="15.0"/>
+                        </HBox.margin>
+                    </VBox>
+                    <VBox prefHeight="200.0" prefWidth="200.0" fx:id="pieds">
+                    </VBox>
+                </HBox>
+            </VBox>
+        </SplitPane>
+        <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0"/>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0"/>
+        </SplitPane>
+    </SplitPane>
 </AnchorPane>

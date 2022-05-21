@@ -1,6 +1,7 @@
-package gameFX.model.item.equipment;
+package gameFX.model.personnage.player;
 
 import gameFX.model.item.Item;
+import gameFX.model.item.equipment.*;
 import gameFX.view.stage.Hub;
 
 import static gameFX.Jeu.player;

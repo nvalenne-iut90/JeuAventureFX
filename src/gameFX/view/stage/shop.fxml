@@ -10,7 +10,7 @@
     <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="1080.0" prefWidth="720.0">
         <VBox fx:id="shopPlace" alignment="TOP_CENTER" prefWidth="720.0">
             <ImageView fitHeight="400.0" fitWidth="720.0" pickOnBounds="true">
-                <Image url="@../../model/assets/seller.png"/>
+                <Image url="@../../model/assets/stages/shop/seller.png"/>
             </ImageView>
             <Label fx:id="namePNJ">
                 <font>

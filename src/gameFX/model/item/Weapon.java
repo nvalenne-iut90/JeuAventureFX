@@ -7,16 +7,16 @@ public class Weapon extends Item {
     protected int damage, weight, levelWeapon;
     protected boolean isZone;
 
-    public Weapon(String name, Enchantment enchantment, int price, String typeWeapon, int damage, int weight, int level, boolean isZone){
-        super(name, enchantment, price);
+    public Weapon(String name, Enchantment enchantment, int price, String typeWeapon, int damage, int weight, int level, boolean isZone, String image){
+        super(name, enchantment, price, image);
         this.typeWeapon = typeWeapon;
         this.damage = damage;
         this.weight = weight;
         this.levelWeapon = level;
         this.isZone = isZone;
     }
-    public Weapon(String name, int price, String typeWeapon, int damage, int weight, int level, boolean isZone){
-        super(name, null, price);
+    public Weapon(String name, int price, String typeWeapon, int damage, int weight, int level, boolean isZone, String image){
+        super(name, null, price, image);
         this.typeWeapon = typeWeapon;
         this.damage = damage;
         this.weight = weight;

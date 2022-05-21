@@ -1,13 +1,10 @@
 package gameFX.model.personnage.player;
 
 import gameFX.model.item.*;
-import gameFX.model.item.equipment.Equipment;
 import gameFX.model.personnage.player.classe.ClasseJoueur;
 import gameFX.model.personnage.pnj.PNJ;
 
 import java.util.List;
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class Joueur {
     public static int nbrOfMonstersKilled = 0;
@@ -21,7 +18,7 @@ public class Joueur {
     private Inventory inventory;
     private Equipment equipment;
     private Weapon weapon;
-    private Weapon poings = new Weapon("poing", 0, "corps à corps", 20, 0, 1, false);
+    private Weapon poings = new Weapon("poing", 0, "corps à corps", 20, 0, 1, false, "");
 
     public Joueur(String nomJoueur, String sexe){
         this.nomJoueur = nomJoueur;

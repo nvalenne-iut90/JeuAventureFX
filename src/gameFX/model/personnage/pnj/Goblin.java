@@ -5,7 +5,7 @@ import gameFX.model.personnage.player.Joueur;
 
 public class Goblin extends PNJ {
     private final Weapon weapon;
-    private final Weapon baton = new Weapon("baton en bois", 1, "corps à corps", 2, 1, 1, false);
+    private final Weapon baton = new Weapon("baton en bois", 1, "corps à corps", 2, 1, 1, false, "");
     public Goblin(){
         super("goblin", 20);
         this.weapon = baton;

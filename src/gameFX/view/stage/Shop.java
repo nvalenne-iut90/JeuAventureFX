@@ -12,8 +12,8 @@ public class Shop {
     private static int resultInt;
     public Shop(){
         this.articlesVente = new Item[]{
-                new Consumable("Pomme", 2),
-                new Weapon("Epée en bois", 10, "arme blanche", 10, 3, 1, false)
+                new Consumable("Pomme", 2, "consumable_pomme.png"),
+                new Weapon("Epée en bois", 10, "arme blanche", 10, 3, 1, false, "weapon_wooden_sword.png")
         };
 
     }
